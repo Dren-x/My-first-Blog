@@ -1,0 +1,5 @@
+BlogBlogBundle_homepage:
+    path:  /
+    defaults: { _controller: BlogBlogBundle:Page:index }
+    requirements:
+      methods:  GET
