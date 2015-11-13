@@ -3,3 +3,8 @@ BlogBlogBundle_homepage:
     defaults: { _controller: BlogBlogBundle:Page:index }
     requirements:
       methods:  GET
+BlogBlogBundle_contact:
+    path:  /contact
+    defaults: { _controller: BlogBlogBundle:Page:contact }
+    requirements:
+      methods:  GET

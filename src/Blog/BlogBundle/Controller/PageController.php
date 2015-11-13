@@ -9,4 +9,8 @@ class PageController extends Controller
     {
         return $this->render('BlogBlogBundle:Page:index.html.twig');
     }
+    public function contactAction()
+    {
+        return $this->render('BlogBlogBundle:Page:contact.html.twig');
+    }
 }
