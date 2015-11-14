@@ -22,5 +22,5 @@ body { line-height: 1;font-family: Arial, Helvetica, sans-serif;font-size: 12px;
 .main-col a { color: #f40300; }
 .main-col h1,
 .main-col h2
-{ line-height: 1.2em; font-size: 32px; margin-bottom: 10px; font-weight: normal; color: #f4f116; }
+{ font-family:"Comic Sans MS"; line-height: 1.2em; font-size: 20px; margin-bottom: 10px; text-align: center; font-weight: normal; color: #000000; }
 .main-col p { line-height: 1.5em; margin-bottom: 20px; }

@@ -1,13 +1,30 @@
 {% extends 'BlogBlogBundle::layout.html.twig' %}
 
-{% block title %}Contact{% endblock%}
+{% block title %}Обратная связь{% endblock%}
 
 {% block body %}
     <header>
-        <h1>Contact symblog</h1>
-    </header>
-    <p>Want to contact symblog?</p>
+        <h1>Заполните форму:</h1></br>
 
+    </header>
+        {% for flashMessage in app.session.flashbag.get('blog-notice') %}
+            <div class="blog-notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+
+    <form action="{{ path('BlogBlogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blog">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Отправить" />
+    </form>
 
 
 {% endblock %}

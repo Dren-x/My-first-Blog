@@ -8,3 +8,9 @@ BlogBlogBundle_contact:
     defaults: { _controller: BlogBlogBundle:Page:contact }
     requirements:
       methods:  GET
+BlogBlogBundle_blog_show:
+    path:  /{id}
+    defaults: { _controller: BlogBlogBundle:Blog:show }
+    requirements:
+        methods:  GET
+        id: \d+
