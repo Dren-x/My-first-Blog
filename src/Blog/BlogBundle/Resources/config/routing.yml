@@ -14,3 +14,8 @@ BlogBlogBundle_blog_show:
     requirements:
         methods:  GET
         id: \d+
+BlogBlogBundle_about:
+    path:  /about
+    defaults: { _controller: BlogBlogBundle:Page:about }
+    requirements:
+        methods:  GET

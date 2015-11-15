@@ -12,7 +12,10 @@ class PageController extends Controller
     {
         return $this->render('BlogBlogBundle:Page:index.html.twig');
     }
-
+    public function aboutAction()
+    {
+        return $this->render('BlogBlogBundle:Page:about.html.twig');
+    }
     public function contactAction()
     {
         $enquiry = new Enquiry();
@@ -22,8 +25,8 @@ class PageController extends Controller
         if ($request->getMethod() == 'POST') {
             $form->bind($request);
 
-
             if ($form->isValid()) {
+
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Contact enquiry from symblog')
                     ->setFrom('enquiries@symblog.co.uk')
@@ -31,14 +34,11 @@ class PageController extends Controller
                     ->setBody($this->renderView('BlogBlogBundle:Page:contactEmail.txt.twig', array('enquiry' => $enquiry)));
                 $this->get('mailer')->send($message);
 
-                $this->get('session')->getFlashBag()->add('blogger-notice', 'Your contact enquiry was successfully sent. Thank you!');
+                $this->get('session')->getFlashBag()->add('blog-notice', 'Ваш запрос успешно отправлен. Ожидайте скорого ответа! ');
+
                 return $this->redirect($this->generateUrl('BlogBlogBundle_contact'));
             }
         }
-
-        return $this->render('BlogBlogBundle:Page:contact.html.twig', array(
-            'form' => $form->createView()
-        ));
-
+        return $this->render('BlogBlogBundle:Page:contact.html.twig', array('form' => $form->createView()));
     }
 }
