@@ -4,59 +4,55 @@ namespace Blog\BlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="blog")
- * @ORM\HasLifecycleCallbacks
- */
+* @ORM\Entity
+* @ORM\Table(name="blog")
+* @ORM\HasLifecycleCallbacks
+*/
 class Blog
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+/**
+* @ORM\Id
+* @ORM\Column(type="integer")
+*/
 
-     */
+protected $id;
 
+/**
+* @ORM\Column(type="string")
+*/
+protected $title;
 
-    protected $id;
+/**
+* @ORM\Column(type="string", length=100)
+*/
+protected $author;
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $title;
+/**
+* @ORM\Column(type="text")
+*/
+protected $blog;
 
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    protected $author;
+/**
+* @ORM\Column(type="string", length=20)
+*/
+protected $image;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $blog;
+/**
+* @ORM\Column(type="text")
+*/
+protected $tags;
 
-    /**
-     * @ORM\Column(type="string", length=20)
-     */
-    protected $image;
+protected $comments;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $tags;
+/**
+* @ORM\Column(type="datetime")
+*/
+protected $created;
 
-    protected $comments = array();
-
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $created;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    protected $updated;
+/**
+* @ORM\Column(type="datetime")
+*/
+protected $updated;
 
     /**
      * Get id

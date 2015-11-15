@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Blog\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,6 +23,6 @@ class BlogController extends Controller
             throw $this->createNotFoundException('Unable to find Blog post.');
         }
 
-        return $this->render('BlogBlogBundle:Blog:show.html.twig', array('blog'=> $blog,));
+        return $this->render('BlogBlogBundle:Blog:show.html.twig', array('blog' => $blog,));
     }
 }
